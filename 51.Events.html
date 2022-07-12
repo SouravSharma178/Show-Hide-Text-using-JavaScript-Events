@@ -1,0 +1,65 @@
+<!-- in this tutorial we are going to see how to use event listeners in JS and will also see how we can show/hide text in JS -->
+   <!-- Browser events:
+    click
+    contextmenu
+    mouseover/mouseout
+    mousedown/mouseup
+    mousemove
+    submit
+    focus
+    DOMContentLoaded
+    transitionend -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events & Listening to Events</title>
+    <style>
+   #btn{
+       padding: 10px;
+       display: block;
+       position: sticky;
+
+       width: 100px;
+       margin: auto;
+       background-color: red;
+       color: white;
+   }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>This is my heading</h1>
+    <p id="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe illum ipsa voluptatum, obcaecati corporis natus impedit facere quae deserunt placeat molestias alias quo vero error aut pariatur repudiandae sit quisquam nesciunt et. Eos delectus quas est accusamus tempore dignissimos nostrum magnam laborum asperiores error? Rerum repellat explicabo amet nesciunt cupiditate suscipit maxime ratione, aperiam maiores ipsa quasi nihil modi, quaerat sapiente ut unde, consectetur cumque. Temporibus, quod maiores, soluta expedita porro quo eligendi unde dignissimos mollitia repudiandae nulla, fuga deserunt consequuntur! Illo laboriosam fuga doloribus nisi in earum. Atque aliquid culpa mollitia. Veritatis laudantium alias fuga delectus ea, aliquid sequi nulla nobis labore quo assumenda magnam reiciendis eos praesentium ipsam suscipit earum voluptate repellat a minus nesciunt officiis necessitatibus? Facilis, repellat praesentium exercitationem maxime eius delectus rem blanditiis quod quidem quo, eos rerum veritatis voluptates est asperiores odio? Labore adipisci quae quas, rerum quo fuga obcaecati eveniet! Nulla, eveniet fugit dignissimos quae culpa alias? Eaque, laboriosam eum repellat tenetur, eos ut, veritatis deleniti suscipit quos earum hic alias minus ad repudiandae unde sapiente! Praesentium voluptatibus corrupti non! Placeat cupiditate voluptate esse reiciendis amet, excepturi, consectetur, qui odio porro fuga temporibus facilis corporis magnam recusandae? Laborum doloremque libero, alias magni dolore harum enim cum eaque facere doloribus itaque facilis unde saepe sequi, aliquam fugit et. Numquam, itaque esse cupiditate ea alias illo deleniti atque quo totam odit quibusdam laboriosam, cumque aperiam nobis, voluptate suscipit.</p>
+    <button id="btn" class="btn" onclick="toggleHide()">Show/Hide</button>
+</div>
+<script>
+    // now we will understand this syntax
+    // the variable para will first  store the navigated dom element with the id para
+    // then we will just instruct this variable that add event/actions over the element with this id.So this will become our DOM object to call the addEventListener method
+
+    let para = document.getElementById('para');
+    para.addEventListener('mouseover', function run(){
+
+        console.log('Mouse Inside')
+    });
+    para.addEventListener('mouseout', function run(){
+
+        console.log('Mouse now went outside')
+    });
+
+    // this function is contained in the button attribute
+    function toggleHide(){
+        let para = document.getElementById('para');
+        if(para.style.display != 'none'){
+        para.style.display = 'none';
+        }
+        else{
+        para.style.display = 'block';
+        }
+    }
+</script>
+</body>
+</html>
